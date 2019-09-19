@@ -7,29 +7,28 @@ import { Router } from '@angular/router';
   // templateUrl: './login.component.html',
   template: require('./login.component.html'),
   // styleUrls: ['./login.component.css']
-  styles: [ require('./login.component.css') ]
+  styles: [require('./login.component.css')]
 })
 export class LoginComponent implements OnInit {
 
-  public username: string = "";
-  public password: string ="";
-  //public errorDialogRef: MatDialogRef<ErrorComponent>;
+  public username = '';
+  public password = '';
 
-  constructor(private dialog: MatDialog,private router: Router) { }
+  // public errorDialogRef: MatDialogRef<ErrorComponent>;
+
+  constructor(private dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
   }
-  login(){
-    if(this.username === "demo" && this.password === "demo")
-    {
+  login() {
+    if (this.username === 'demo' && this.password === 'demo') {
       this.router.navigate(['customer-list']);
-    }
-    else
-    {
-      
-      this.dialog.open(ErrorComponent,{  data: {
-        message: "Your login information are incorrect!"
-      }});
+    } else {
+      this.dialog.open(ErrorComponent, {
+        data: {
+          message: 'Your login information are incorrect!'
+        }
+      });
     }
   }
 }
