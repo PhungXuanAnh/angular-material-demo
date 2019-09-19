@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
+
 
 module.exports = {
   mode: 'development',
@@ -59,7 +61,10 @@ module.exports = {
     new webpack.ContextReplacementPlugin(
       /\@angular(\\|\/)core(\\|\/)fesm5/,
       path.resolve(__dirname, 'src'), {}
-    )
+    ),
+    new FilterWarningsPlugin({
+      exclude: /System.import/
+    })
   ],
   devtool: "source-map",
   devServer: {
