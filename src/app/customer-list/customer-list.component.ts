@@ -4,7 +4,8 @@ import { Customer } from '../customer';
 
 @Component({
   selector: 'app-customer-list',
-  templateUrl: './customer-list.component.html',
+  // templateUrl: './customer-list.component.html',
+  template: require('./customer-list.component.html'),
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
@@ -39,12 +40,12 @@ export class CustomerListComponent implements OnInit {
 
   constructor(public snackBar: MatSnackBar) {}
 
-  deleteCustomer(id){
+  deleteCustomer(id:string){
     
     let snackBarRef = this.snackBar.open(`Deleting customer #${id}`);
   }
 
-  editCustomer(id){
+  editCustomer(id:string){
     let snackBarRef = this.snackBar.open(`Editing customer #${id}`);
 
   }
