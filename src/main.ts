@@ -4,6 +4,10 @@ import 'hammerjs';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+// uncomment one of two line below to include angular material theme
+import './styles.css';
+// import './vendor';
+
 if (environment.production) {
   enableProdMode();
 }
