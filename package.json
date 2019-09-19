@@ -6,6 +6,7 @@
     "ng": "ng",
     "start": "ng serve --port 4242",
     "build": "ng build --prod",
+    "dev": "npx webpack-dev-server",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
