@@ -4,7 +4,8 @@ import {FormControl} from '@angular/forms';
   selector: 'app-customer-create',
   // templateUrl: './customer-create.component.html',
   template: require('./customer-create.component.html'),
-  styleUrls: ['./customer-create.component.css']
+  // styleUrls: ['./customer-create.component.css']
+  styles: [ require('./customer-create.component.css') ]
 })
 export class CustomerCreateComponent implements OnInit {
   name: string = "";

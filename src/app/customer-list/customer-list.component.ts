@@ -6,7 +6,8 @@ import { Customer } from '../customer';
   selector: 'app-customer-list',
   // templateUrl: './customer-list.component.html',
   template: require('./customer-list.component.html'),
-  styleUrls: ['./customer-list.component.css']
+  // styleUrls: ['./customer-list.component.css']
+  styles: [ require('./customer-list.component.css') ]
 })
 export class CustomerListComponent implements OnInit {
 
