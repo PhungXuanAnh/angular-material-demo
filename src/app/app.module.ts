@@ -1,28 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MyMaterialModule } from './material.module';
+import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
 
 
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerCreateComponent } from './customer-create/customer-create.component';
 import { LoginComponent } from './login/login.component';
-import {ErrorComponent} from './error.component';
+import { ErrorComponent } from './error.component';
 const appRoutes: Routes = [
   { path: 'customer-list', component: CustomerListComponent },
-  { path: 'customer-create',      component: CustomerCreateComponent },
+  { path: 'customer-create', component: CustomerCreateComponent },
   {
     path: 'login',
     component: LoginComponent
   },
-  { path: '',
+  {
+    path: '',
     redirectTo: '/login',
     pathMatch: 'full'
-  },  
+  },
 ];
 
 @NgModule({
@@ -40,10 +42,10 @@ const appRoutes: Routes = [
     MyMaterialModule,
     RouterModule.forRoot(
       appRoutes,
-    )    
+    )
   ],
   entryComponents: [ErrorComponent],
-  providers: [],
+  providers: [{ provide: MATERIAL_SANITY_CHECKS, useValue: false }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
