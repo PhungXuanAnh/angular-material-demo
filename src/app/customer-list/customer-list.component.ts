@@ -9,7 +9,7 @@ import { Customer } from '../customer';
   // styleUrls: ['./customer-list.component.css']
   styles: [require('./customer-list.component.css')]
 })
-export class CustomerListComponent implements OnInit {
+export class CustomerListComponent implements OnInit, AfterViewInit {
 
   customers: Customer[] = [
     { id: 1, name: 'Customer 001', job: 'Programmer' },
