@@ -59,8 +59,8 @@ module.exports = {
       inject: "body"
     }),
     new webpack.ContextReplacementPlugin(
-      /\@angular(\\|\/)core(\\|\/)fesm5/,
-      path.resolve(__dirname, 'src'), {}
+      /angular(\\|\/)core(\\|\/)/,
+      path.resolve(__dirname, './src')
     ),
     new FilterWarningsPlugin({
       exclude: /System.import/
